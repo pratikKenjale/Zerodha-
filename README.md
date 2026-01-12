@@ -71,11 +71,8 @@ This separation follows **industry-level MERN architecture** and makes the proje
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the repository
-
-```bash
+### 1️⃣ Clone the repository :
 https://github.com/pratikKenjale/Zerodha-
-```
 
 ---
 
@@ -122,6 +119,3 @@ Backend runs on: **[http://localhost:3001](http://localhost:3001)**
 * Build a strong portfolio project
 
 ---
-
-
-it is good
