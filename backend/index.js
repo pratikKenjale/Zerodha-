@@ -9,23 +9,17 @@ const cors = require("cors");
 const {HoldingsModel}= require('./model/HoldingsModel');
 const {PositionsModel}= require('./model/PositionsModel');
 const { OrdersModel } = require("./model/OrdersModel");
-const { UserModel } = require("./model/UserModel");
 
-const authRoutes = require("./routes/auth");
 
 const PORT = process.env.PORT || 3001;
 const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
-  credentials: true
-}));
-
+app.use(cors());
 app.use(bodyParser.json());
 
-app.use("/api", authRoutes);
+
 // app.get("/addPositions", async (req, res) => {
 //   let tempPositions = [
 //     {
@@ -222,29 +216,6 @@ app.post("/newOrder", async (req, res) => {
 
   res.send("Order saved!");
 });
-
-// app.post("/signup", async (req, res) => {
-//   try {
-//     const { email, username, password } = req.body;
-
-//     if (!email || !username || !password) {
-//       return res.status(400).json({ message: "All fields are required" });
-//     }
-
-//     const existingUser = await UserModel.findOne({ email });
-//     if (existingUser) {
-//       return res.status(400).json({ message: "User already exists" });
-//     }
-
-//     await UserModel.create({ email, username, password });
-
-//     res.status(201).json({ message: "Signup successful" });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// });
-
-
 
 
 app.listen(3001, ()=>{
